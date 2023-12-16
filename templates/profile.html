@@ -1,0 +1,27 @@
+<!-- templates/profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+
+<h2>User Profile</h2>
+
+<p>Username: {{ user.username }}</p>
+
+{% if user_posts %}
+    <h3>User Posts:</h3>
+    <ul>
+        {% for post in user_posts %}
+            <li>{{ post.content }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts available</p>
+{% endif %}
+
+</body>
+</html>
